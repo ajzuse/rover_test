@@ -1,0 +1,14 @@
+{
+  "name": "test_rover",
+  "version": "1.0.0",
+  "description": "A test rover project developed by Andrei J. Zuse",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Andrei Jiácomo Zuse",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}
