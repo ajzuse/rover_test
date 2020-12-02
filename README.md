@@ -3,7 +3,6 @@
 
 Solução para o problema do Rover desenvolvida em Javascript com programação modular.
 
-Framework JavaScript: NodeJS
 Framework de Teste: Mocha
 
 Usada programação modular baseada em objetos, com troca de mensagens a partir de chamadas de funções encapsuladas no módulo **Land** com chamadas ao módulo **Rover** a partir dele.
@@ -21,3 +20,5 @@ Para execução dos testes, executar o comando:
     npm test
   
   
+# Desenvolvedor
+Desenvolvido por Andrei Jiácomo Zuse em Dezembro/2020
