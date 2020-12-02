@@ -39,6 +39,10 @@ const rover = (x, y, direction) => {
         return y
     }
 
+    this.getDirection = () => {
+        return direction
+    }
+
     return this
 }
 
