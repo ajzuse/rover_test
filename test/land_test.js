@@ -51,5 +51,52 @@ describe('Land test', () => {
       /Rover position Out of Bounds!/
       )
     })
+
+    it('shouldn\'t move rover to out of land bounds', () => {
+      const land = createLand(5, 5)
+
+      land.createRover(1, 1, 'W')
+      land.sendCommandToRover(0, 'M'),
+
+      assert.throws(
+        () => land.sendCommandToRover(0, 'M'),
+        /Rover position Out of Bounds! Rover is lost!/
+      )
+    })
+
+    it('should move rover over the land test 1', () => {
+      const land = createLand(5, 5)
+
+      land.createRover(1, 2, 'N')
+      land.sendCommandToRover(0, 'L')
+      land.sendCommandToRover(0, 'M')
+      land.sendCommandToRover(0, 'L')
+      land.sendCommandToRover(0, 'M')
+      land.sendCommandToRover(0, 'L')
+      land.sendCommandToRover(0, 'M')
+      land.sendCommandToRover(0, 'L')
+      land.sendCommandToRover(0, 'M')
+      land.sendCommandToRover(0, 'M')
+      
+      assert.strictEqual(land.getRover(0).statusReport(), '1 3 N')
+    })
+
+    it('should move rover over the land test 2', () => {
+      const land = createLand(5, 5)
+
+      land.createRover(3, 3, 'E')
+      land.sendCommandToRover(0, 'M')
+      land.sendCommandToRover(0, 'M')
+      land.sendCommandToRover(0, 'R')
+      land.sendCommandToRover(0, 'M')
+      land.sendCommandToRover(0, 'M')
+      land.sendCommandToRover(0, 'R')
+      land.sendCommandToRover(0, 'M')
+      land.sendCommandToRover(0, 'R')
+      land.sendCommandToRover(0, 'R')
+      land.sendCommandToRover(0, 'M')
+      
+      assert.strictEqual(land.getRover(0).statusReport(), '5 1 E')
+    })
   })
 });

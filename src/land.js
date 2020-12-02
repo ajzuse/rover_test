@@ -41,6 +41,9 @@ const land = (x, y) => {
         if (rover.getX() > maxX || rover.getY() > maxY) {
             throw Error('Rover position Out of Bounds! Rover is lost!')
         }
+        if (rover.getX() < 0 || rover.getY() < 0) {
+            throw Error('Rover position Out of Bounds! Rover is lost!')
+        }
     }
 
     return this
